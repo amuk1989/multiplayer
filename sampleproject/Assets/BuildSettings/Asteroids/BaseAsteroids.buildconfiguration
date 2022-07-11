@@ -4,7 +4,7 @@
     "Components": [
         {
             "$type": "Unity.Build.Common.GeneralSettings, Unity.Build",
-            "ProductName": "Asteroids",
+            "ProductName": "application",
             "CompanyName": "Unity Technologies",
             "Version": "0.1"
         },
@@ -14,7 +14,7 @@
             "BuildCurrentScene": false,
             "SceneInfos": [
                 {
-                    "Scene": "GlobalObjectId_V1-1-e1d9a388defac7049a631b0047b4278e-102900000-0",
+                    "Scene": "GlobalObjectId_V1-1-46d38099d1fc14425a0f07eff0d05a93-102900000-0",
                     "AutoLoad": true
                 }
             ]

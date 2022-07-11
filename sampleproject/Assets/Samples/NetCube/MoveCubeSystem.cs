@@ -3,6 +3,7 @@ using Unity.NetCode;
 using Unity.Transforms;
 
 [UpdateInGroup(typeof(GhostPredictionSystemGroup))]
+[AlwaysSynchronizeSystem]
 public partial class MoveCubeSystem : SystemBase
 {
     GhostPredictionSystemGroup m_GhostPredictionSystemGroup;
@@ -14,7 +15,7 @@ public partial class MoveCubeSystem : SystemBase
     {
         var tick = m_GhostPredictionSystemGroup.PredictingTick;
         var fixedCubeSpeed = Time.DeltaTime * 3;
-        Entities.ForEach((DynamicBuffer<CubeInput> inputBuffer, ref Translation trans, in PredictedGhostComponent prediction) =>
+        Entities.ForEach((DynamicBuffer<CubeInputCommand> inputBuffer, ref Translation trans, in PredictedGhostComponent prediction) =>
         {
             if (!GhostPredictionSystemGroup.ShouldPredict(tick, prediction))
                 return;

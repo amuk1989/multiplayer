@@ -72,7 +72,7 @@ public partial class GoInGameServerSystem : SystemBase
                 var isEven = (networkIdComponent.Value & 1) == 0;
                 var staggeredXPos = networkIdComponent.Value * math.@select(.55f, -.55f, isEven) + math.@select(-0.25f, 0.25f, isEven);
                 var preventZFighting = -0.01f * networkIdComponent.Value;
-                commandBuffer.SetComponent(player, new Translation { Value = new float3(staggeredXPos, preventZFighting, 0) });
+                commandBuffer.SetComponent(player, new Translation { Value = new float3(staggeredXPos, preventZFighting + 2, 0) });
             }
 
             commandBuffer.DestroyEntity(reqEnt);
